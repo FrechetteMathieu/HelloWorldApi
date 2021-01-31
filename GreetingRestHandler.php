@@ -16,7 +16,7 @@ class GreetingRestHandler extends SimpleRest {
 			$statusCode = 200;
 		}
 
-		$this->buildResponse($rawData);
+		$this->buildResponse($rawData, $statusCode);
     }
     
     public function getGreeting($id) {
@@ -31,7 +31,7 @@ class GreetingRestHandler extends SimpleRest {
 			$statusCode = 200;
 		}
 
-		$this->buildResponse($rawData);
+		$this->buildResponse($rawData, $statusCode);
     }
     
     public function getRandomGreetings() {
@@ -46,10 +46,10 @@ class GreetingRestHandler extends SimpleRest {
 			$statusCode = 200;
 		}
 
-		$this->buildResponse($rawData);
+		$this->buildResponse($rawData, $statusCode);
 	}
     
-    public function buildResponse($data) {
+    public function buildResponse($data, $statusCode) {
         $requestContentType = $_SERVER['HTTP_ACCEPT'];
 		$this ->setHttpHeaders($requestContentType, $statusCode);
 				
